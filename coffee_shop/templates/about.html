@@ -1,0 +1,14 @@
+{% load static %}
+{% load i18n %}
+{% include 'link & script.html' %}
+{% include 'header.html' %}
+{% block main %}
+<div class="row tm-welcome-content">
+  <h2 class="col-lg-12 margin-bottom-30">cafe wood</h2>
+  <p class="tm-welcome-description">{% trans "At Cafe Wood, each cup of coffee is prepared with care and love to give you an unforgettable taste. We use the best coffee beans and professional methods to create a special experience." %}</p>
+  <p class="tm-welcome-description">{% trans "Our warm and friendly atmosphere is designed to give you a moment of peace. Here, coffee is not just a drink; Rather, it is a bridge to happy moments and lasting memories." %}</p>
+</div>
+<script type="text/javascript" src="{% static 'js/jquery-1.11.2.min.js' %}"></script>      <!-- jQuery -->
+<script type="text/javascript" src="{% static 'js/templatemo-script.js' %}"></script>      <!-- Templatemo Script -->
+{% endblock main %}
+{% include 'footer.html' %}
