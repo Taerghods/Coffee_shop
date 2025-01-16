@@ -4,12 +4,13 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #   {% trans "" %}
+#: coffee_shop/templates/about.html:37
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-15 10:15+0000\n"
+"POT-Creation-Date: 2025-01-15 19:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,38 +20,85 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: coffee_shop/templates/about.html:8 coffee_shop/templates/footer.html:16
+#: coffee_shop/templates/about.html:17
 msgid ""
-"At Cafe Wood, each cup of coffee is prepared with care and love to give you "
-"an unforgettable taste. We use the best coffee beans and professional "
-"methods to create a special experience."
+"Cafe Wood is a place where the pleasant aroma of coffee is combined with the "
+"warmth of wood in a special atmosphere. This is a place to relax, get "
+"inspired and create a memorable moment. At Choub Cafe, we have tried to "
+"create an atmosphere that is pleasant for friendly conversations, business "
+"meetings, and lonely moments with a cup of drink."
 msgstr ""
-"در کافه چوب هر فنجان قهوه با دقت و عشق تهیه می شود تا طعمی فراموش نشدنی را "
-"به شما هدیه دهد. ما از بهترین دانه های قهوه و روش های حرفه ای برای ایجاد یک "
-"تجربه خاص استفاده می کنیم."
+"کافه چوب، جایی است که عطر دلنشین قهوه با گرمای چوب در فضایی منحصربه‌فرد پیوند "
+"خورده است. اینجا مکانی برای آرامش، الهام گرفتن و خلق لحظاتی به‌یادماندنی است. "
+"ما در کافه چوب تلاش کرده‌ایم فضایی ایجاد کنیم که هم برای گفت‌وگوهای دوستانه، "
+"هم ملاقات‌های کاری، و هم لحظات تنهایی همراه با یک فنجان نوشیدنی دلپذیر مناسب "
+"باشد."
 
-#: coffee_shop/templates/about.html:9 coffee_shop/templates/footer.html:17
+#: coffee_shop/templates/about.html:18
 msgid ""
-"Our warm and friendly atmosphere is designed to give you a moment of peace. "
-"Here, coffee is not just a drink; Rather, it is a bridge to happy moments "
-"and lasting memories."
+"The decoration of the cafe has been formed by focusing on the use of natural "
+"elements and warm and friendly design to give you a feeling of relaxation "
+"and positive energy. We believe that details matter; From the arrangement of "
+"the tables to the choice of music and lighting, everything is carefully "
+"designed to create a different and enjoyable experience for you."
 msgstr ""
-"فضای گرم و صمیمی ما طراحی شده تا لحظه‌ای از آرامش را به شما هدیه دهد. اینجا، "
-"قهوه تنها یک نوشیدنی نیست؛ بلکه پلی است به سوی لحظات خوش و خاطرات ماندگار."
+"دکوراسیون کافه با تمرکز بر استفاده از عناصر طبیعی و طراحی گرم و صمیمی شکل "
+"گرفته است تا حسی از آرامش و انرژی مثبت را به شما منتقل کند. ما معتقدیم که "
+"جزئیات مهم هستند؛ از چیدمان میزها گرفته تا انتخاب موسیقی و نورپردازی، همه "
+"چیز با دقت طراحی شده تا تجربه‌ای متفاوت و لذت‌بخش را برای شما رقم بزند."
 
-#: coffee_shop/templates/footer.html:10 coffee_shop/templates/footer.html:15
+#: coffee_shop/templates/about.html:27
+msgid ""
+"The Wood Cafe website is the way to communicate with you more easily and "
+"closer. On our website, you can view a variety of drinks, desserts and "
+"snacks, find out about the latest news and special events, and easily find "
+"yourself when you want. There is also a section for your comments and "
+"suggestions so that we can do our services better every day with your help."
+msgstr ""
+"وب‌سایت کافه چوب، راهی برای ارتباط راحت‌تر و نزدیک‌تر با شماست. در وب‌سایت ما "
+"می‌توانید منوی متنوع نوشیدنی‌ها، دسرها و غذاهای سبک ما را مشاهده کنید، از "
+"آخرین اخبار و رویدادهای ویژه باخبر شوید و به‌راحتی میز خود را برای زمانی که "
+"می‌خواهید رزرو کنید. همچنین بخشی برای نظرات و پیشنهادات شما در نظر گرفته شده "
+"تا بتوانیم با کمک شما خدماتمان را هر روز بهتر کنیم."
+
+#: coffee_shop/templates/about.html:36
+msgid ""
+"The staff of Wood Cafe is a team of professional, friendly and energetic "
+"people who will do their best to create great moments for you. From warm and "
+"friendly hospitality to providing the highest quality food and drinks, we "
+"are always committed to providing the best service."
+msgstr ""
+"کارکنان کافه چوب تیمی از افراد حرفه‌ای، خوش‌برخورد و پرانرژی هستند که تمام "
+"تلاش خود را می‌کنند تا لحظاتی بی‌نقص برای شما فراهم شود. از پذیرایی گرم و "
+"صمیمی تا آماده‌سازی نوشیدنی‌ها و غذاها با بالاترین کیفیت، ما همواره به ارائه "
+"بهترین خدمات متعهد هستیم."
+
+#: coffee_shop/templates/about.html:46
+msgid ""
+"We believe that every moment can be special and beautiful. Our goal is to "
+"create a space where life can be felt in the true sense; A place where you "
+"can get away from the hustle and bustle of everyday life and experience "
+"peace. We are waiting for you to spend happy and memorable moments with us "
+"at Choub Cafe."
+msgstr ""
+"ما در کافه چوب باور داریم که هر لحظه می‌تواند خاص و زیبا باشد. هدف ما خلق "
+"فضایی است که در آن، زندگی به معنای واقعی احساس شود؛ جایی که بتوانید از "
+"شلوغی‌های روزمره فاصله بگیرید و آرامش را تجربه کنید. منتظرتان هستیم تا در "
+"کافه چوب لحظاتی شاد و به‌یادماندنی را با ما سپری کنید."
+
+#: coffee_shop/templates/footer.html:10
 #, fuzzy
 #| msgid "About"
 msgid "About Us"
 msgstr "درباره ما"
 
-#: coffee_shop/templates/footer.html:11
+#: coffee_shop/templates/footer.html:15
 #, fuzzy
 #| msgid "Contact"
 msgid "Contact Us"
 msgstr "ارتباط با ما"
 
-#: coffee_shop/templates/footer.html:20
+#: coffee_shop/templates/footer.html:19
 msgid "Get Social"
 msgstr "همراه‌مان باشید"
 
@@ -96,6 +144,50 @@ msgstr ""
 #: coffee_shop/templates/header.html:87
 msgid "Details"
 msgstr "جزئیات"
+
+#: coffee_shop/templates/index.html:12
+msgid ""
+"where every cup tells a story of passion and quality. Our café is more than "
+"just a place to enjoy coffee – it’s a haven for coffee lovers seeking the "
+"perfect blend of flavor and ambiance. With hand-selected beans, expertly "
+"brewed drinks, and a cozy atmosphere surrounded by warm wooden tones, we’re "
+"dedicated to serving you the best coffee experience. Whether you’re here for "
+"a peaceful moment, a friendly chat, or to fuel your day, Wood Coffee is "
+"where your perfect cup awaits."
+msgstr "جایی که هر فنجان داستانی از اشتیاق و کیفیت را بیان می کند. کافه ما چیزی بیش از مکانی برای لذت بردن از قهوه است - این کافه پناهگاهی برای دوستداران قهوه است که به دنبال ترکیبی عالی از طعم و محیط هستند. با دانه‌های انتخاب‌شده دستی، نوشیدنی‌های ماهرانه و فضایی دنج احاطه‌شده با رنگ‌های چوبی گرم، ما وقف ارائه بهترین تجربه قهوه به شما هستیم. چه برای لحظاتی آرام، چه برای یک گفتگوی دوستانه، چه برای انرژی بخشیدن به روز خود اینجا هستید، قهوه چوب جایی است که فنجان عالی شما در انتظار شماست."
+
+#: coffee_shop/templates/index.html:31
+msgid ""
+"Every sip is a reminder of the moment when the bitter taste of life mixes "
+"with the sweetness of love."
+msgstr "هر جرعه ای یادآور لحظه ای است که طعم تلخ زندگی با شیرینی عشق در می آمیزد."
+
+#: coffee_shop/templates/index.html:33
+#, fuzzy
+#| msgid "Order list"
+msgid "Order Now"
+msgstr "لیست سفارشات"
+
+#: coffee_shop/templates/index.html:41
+msgid ""
+"This is a love story in the form of a dessert. Its soft cremes are a gentle "
+"whisper of love, while its biscuit base is like a layer of emotion."
+msgstr "این یک داستان عاشقانه در قالب یک دسر است. کرم های نرم آن زمزمه ای ملایم از عشق است، در حالی که پایه بیسکویتی آن مانند لایه ای از احساس است."
+
+#: coffee_shop/templates/index.html:51
+msgid ""
+"A love story that has bitterness and sweetness together. Each sip is like a "
+"comforting hug that penetrates deep into the heart."
+msgstr "داستان عاشقانه ای که تلخی و شیرینی در کنار هم دارد. هر جرعه مانند یک آغوش آرامش بخش است که به اعماق قلب نفوذ می کند."
+
+#: coffee_shop/templates/index.html:130
+msgid ""
+"Indulge in the perfect blend of flavors with our Daily Café Menu! From "
+"freshly brewed coffee and aromatic teas to delightful pastries and light "
+"bites, we offer a carefully curated selection to brighten your day. Each "
+"item is crafted with love to bring you comfort, energy, and a touch of "
+"sweetness. Discover something new every day at our cafe!"
+msgstr "با منوی روزانه کافه ما از ترکیب کامل طعم ها لذت ببرید! از قهوه تازه دم شده و چای معطر گرفته تا شیرینی‌های خوشمزه و لقمه‌های سبک، ما مجموعه‌ای با دقت انتخاب شده برای روشن کردن روزتان ارائه می‌کنیم. هر مورد با عشق ساخته شده است تا آرامش، انرژی و حس شیرینی را برای شما به ارمغان بیاورد. هر روز در کافه ما چیز جدیدی کشف کنید!"
 
 #: venv/lib/python3.10/site-packages/django/contrib/messages/apps.py:15
 msgid "Messages"
@@ -1303,6 +1395,38 @@ msgstr ""
 #: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:249
 msgid "Connect, get help, or contribute"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Cafe Wood"
+#~ msgid "cafe wood"
+#~ msgstr "کافه چوب"
+
+#~ msgid "website"
+#~ msgstr "وبسایت"
+
+#~ msgid "staff"
+#~ msgstr "کارکنان"
+
+#~ msgid "goals"
+#~ msgstr "اهداف ما"
+
+#~ msgid ""
+#~ "At Cafe Wood, each cup of coffee is prepared with care and love to give "
+#~ "you an unforgettable taste. We use the best coffee beans and professional "
+#~ "methods to create a special experience."
+#~ msgstr ""
+#~ "در کافه چوب هر فنجان قهوه با دقت و عشق تهیه می شود تا طعمی فراموش نشدنی "
+#~ "را به شما هدیه دهد. ما از بهترین دانه های قهوه و روش های حرفه ای برای "
+#~ "ایجاد یک تجربه خاص استفاده می کنیم."
+
+#~ msgid ""
+#~ "Our warm and friendly atmosphere is designed to give you a moment of "
+#~ "peace. Here, coffee is not just a drink; Rather, it is a bridge to happy "
+#~ "moments and lasting memories."
+#~ msgstr ""
+#~ "فضای گرم و صمیمی ما طراحی شده تا لحظه‌ای از آرامش را به شما هدیه دهد. "
+#~ "اینجا، قهوه تنها یک نوشیدنی نیست؛ بلکه پلی است به سوی لحظات خوش و خاطرات "
+#~ "ماندگار."
 
 #~ msgid "About"
 #~ msgstr "درباره ما"
