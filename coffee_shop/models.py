@@ -1,18 +1,27 @@
+from datetime import date
+
 from django.db import models
 
 class User(models.Model):  
-    first_name = models.CharField(max_length=50)  
-    last_name = models.CharField(max_length=50)  
-    phone_number = models.CharField(max_length=15)  
+    first_name = models.CharField(max_length=50)  #obtonal
+    last_name = models.CharField(max_length=50)  #obtonal
+    phone_number = models.CharField(max_length=15)  #11 raqm ba valid
     email = models.EmailField(unique=True)  
-    password = models.CharField(max_length=100)  
-    birthday = models.DateField(null=True, blank=True)  
+    password = models.CharField(max_length=100)    #valid >8
+    birthday = models.DateField(null=True, blank=True)  #def age
+
 
     def __str__(self):  
-        return f"{self.first_name} {self.last_name}"  
+        return f"{self.first_name} {self.last_name}"
+
+    @property
+    def age(self):
+            age = date.today().year
+            return age - self.birthday
+
 
 class Table(models.Model):  
-    table_number = models.IntegerField(unique=True)  
+    table_number = models.IntegerField(unique=True)   #models.PositiveIntegerField() >0
     cafe_space_position = models.CharField(max_length=50)  
 
     def __str__(self):  
@@ -30,8 +39,8 @@ class MenuItem(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)  
     discount = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)  
     description = models.TextField(null=True, blank=True)  
-    serving_time_period = models.CharField(max_length=50, null=True, blank=True)  
-    estimated_cooking_time = models.IntegerField(null=True, blank=True)
+    serving_time_period = models.CharField(max_length=50, null=True, blank=True)     #
+    estimated_cooking_time = models.IntegerField(null=True, blank=True)     #
     image = models.ImageField(upload_to='menu_images/', null=True, blank=True)
     def __str__(self):  
         return self.name  
