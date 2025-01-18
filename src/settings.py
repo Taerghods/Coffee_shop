@@ -122,6 +122,7 @@ LANGUAGES = [
 LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale'), ]
 
 # sudo apt install gettext
+#or: pip install python-gettext
 # echo 'export PATH="/usr/local/opt/gettext/bin:$PATH"' >> ~/.zshrc
 # source ~/.zshrc
 # python manage.py makemessages -l fa
@@ -151,3 +152,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'coffee_shop/static/media')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# pip install -r requirements.txt

@@ -10,7 +10,7 @@ admin.site.register(Payment)
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'phone_number', 'email', 'age')
+    list_display = ('first_name', 'last_name', 'phone_number', 'email')
 
 @admin.register(MenuItem)
 class MenuItemAdmin(admin.ModelAdmin):
