@@ -1,7 +1,8 @@
-from datetime import date
+from datetime import datetime
 
 from django.core.validators import MinLengthValidator, RegexValidator
 from django.db import models
+
 
 class User(models.Model):
     first_name = models.CharField(
@@ -16,21 +17,20 @@ class User(models.Model):
             MinLengthValidator(3)
         ]
     )
-    phone_number = models.CharField(max_length=11)
-        # max_length=11,
-        # validators=[
-        #     RegexValidator(
-        #         regex=r'^\d{9}$',
-        #         message='شماره تلفن باید 10 رقم باشد.'
-        #     )
-        # ],
-        # help_text="فقط 10 رقم شماره تلفن را وارد کنید (بدون +98)."
-    # )
+    phone_number = models.CharField(
+        max_length=11,
+        validators=[
+            RegexValidator(
+                regex=r'^\d{9}$',
+            )
+        ],
+        help_text="فقط 10 رقم آخر شماره تلفن را وارد کنید."
+    )
 
-    # def save(self, *args, **kwargs):
-    #     if not self.phone_number.startswith('+98'):
-    #         self.phone_number = f"+98{self.phone_number}"
-    #     super().save(*args, **kwargs)
+    def save(self, *args, **kwargs):
+        if not self.phone_number.startswith('+98'):
+            self.phone_number = f"+98{self.phone_number}"
+        super().save(*args, **kwargs)
 
     email = models.EmailField(unique=True)
     password = models.CharField(
@@ -46,15 +46,22 @@ class User(models.Model):
     )
 
     birthday = models.DateField(null=True, blank=True)
+    @property
+    def discount(self):
+        today = datetime.today()
+        birth_day = self.birthday.day
+        birth_month = self.birthday.month
+        today_day = today.day
+        today_month = today.month
+
+        if birth_day == today_day and birth_month == today_month:
+            discount = 0.25
+        else:
+            discount = 0
+        return discount
 
     def __str__(self):  
         return f"{self.first_name} {self.last_name}"
-
-    # @property
-    # def age(self):
-    #         age = date.today().year
-    #         return age - self.birthday
-
 
 class Table(models.Model):  
     table_number = models.PositiveIntegerField(unique=True)
@@ -72,8 +79,8 @@ class Category(models.Model):
 class MenuItem(models.Model):  
     name = models.CharField(max_length=100)  
     price = models.IntegerField(default=0)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)  
-    discount = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)  
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='menuitem_set')
+    discount = models.DecimalField(max_digits=2, decimal_places=2, default=0, null=True, blank=True)
     description = models.TextField(null=True, blank=True)  
     serving_time_period = models.CharField(max_length=50, null=True, blank=True)
     estimated_cooking_time = models.IntegerField(null=True, blank=True)
@@ -83,21 +90,22 @@ class MenuItem(models.Model):
 
 class Order(models.Model):  
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)  
-    table = models.ForeignKey(Table, on_delete=models.CASCADE)  
+    table = models.ForeignKey(Table, on_delete=models.CASCADE, null=True, blank=True)
     menu_items = models.ManyToManyField(MenuItem, through='OrderItem')  
-    status = models.CharField(max_length=20, default='Pending')  
-    timestamp = models.DateTimeField(auto_now_add=True)  
+    ready = models.BooleanField(default=False)
+    timestamp = models.DateTimeField(auto_now_add=True)
 
 class OrderItem(models.Model):  
-    order = models.ForeignKey(Order, on_delete=models.CASCADE)  
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='orderitem_set')
     menu_item = models.ForeignKey(MenuItem, on_delete=models.CASCADE)  
-    quantity = models.IntegerField()  
+    quantity = models.IntegerField(null=True, blank=True)
 
 class Receipt(models.Model):  
     order = models.ForeignKey(Order, on_delete=models.CASCADE)  
     total_price = models.DecimalField(max_digits=10, decimal_places=2)  
     final_price = models.DecimalField(max_digits=10, decimal_places=2)
-    timestamp = models.DateTimeField(auto_now_add=True)  
+    timestamp = models.DateTimeField(auto_now_add=True)
+
 
 class Payment(models.Model):  
     receipt = models.ForeignKey(Receipt, on_delete=models.CASCADE)  

@@ -1,0 +1,130 @@
+{% load static %}
+{% load i18n %}
+{% include 'link & script.html' %}
+{% include 'header.html' %}
+{% block main %}
+  <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fff5e6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            background-color: #ffcc80;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .order {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .order:hover {
+            transform: scale(1.02);
+        }
+
+        .order p {
+            margin: 0;
+            font-size: 1.3em;
+        }
+
+        .order button {
+            margin-left: 10px;
+            background-color: #ff7043;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .order button:hover {
+            background-color: #ff5722;
+        }
+
+        .order ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0 0 0;
+        }
+
+        .order li {
+            padding: 5px 0;
+            font-size: 1.1em;
+        }
+
+        .back-button {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .back-button button {
+            background-color: #66bb6a;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transition: background 0.3s;
+        }
+
+        .back-button button:hover {
+            background-color: #388e3c;
+        }
+        .span{
+            background-color: #f8e94a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<section>
+    <header>
+        <h1>سفارشات</h1>
+    </header>
+    <div>
+        {% for order in orders %}
+            <div class="order">
+                <p>سفارش شماره {{ order.id }} - تاریخ {{ order.timestamp }}
+                    {% if not order.ready %}
+                        <a href="{% url 'mark_order_ready' order.id %}"><button>آماده به مشتری تحویل دهید</button></a>
+                    {% else %}
+                        <span class="span">سفارش آماده است</span>
+                    {% endif %}
+                </p>
+                <ul>
+                    {% for item in order.menu_items.all %}
+                        <li>{{ item.name }} - {{ item.price }} تومان</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% empty %}
+            <p>هیچ سفارشی موجود نیست.</p>
+        {% endfor %}
+    </div>
+    <div class="back-button">
+        <a href="{% url 'home' %}"><button>بازگشت به منو</button></a>
+    </div>
+</section>
+<script type="text/javascript" src="{% static 'js/jquery-1.11.2.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/templatemo-script.js' %}"></script>
+{% endblock main %}
+{% include 'footer.html' %}
